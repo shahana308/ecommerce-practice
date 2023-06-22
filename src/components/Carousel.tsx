@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 interface CarouselPropTypes {
-  children: any;
+  children: JSX.Element[];
 }
 
 const Carousel: React.FC<CarouselPropTypes> = ({ children }) => {

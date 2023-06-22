@@ -2,6 +2,8 @@ import { useCartContext } from "../providers/CartProvider";
 
 const Cart = () => {
   const cartItems = useCartContext();
+  const isCartItemsExist =
+    cartItems?.cartItems && cartItems?.cartItems?.length > 0;
 
   return (
     <div style={{ display: "flex", justifyContent: "end" }}>
@@ -10,7 +12,7 @@ const Cart = () => {
           View Cart
         </button>
         <div className="dropdown-content">
-          {cartItems?.cartItems && cartItems?.cartItems?.length > 0
+          {isCartItemsExist
             ? cartItems?.cartItems?.map((item) => (
                 <div
                   className="flex"
@@ -20,7 +22,7 @@ const Cart = () => {
                 </div>
               ))
             : "Your cart is empty."}
-          {cartItems?.cartItems && cartItems?.cartItems?.length > 0 && (
+          {isCartItemsExist && (
             <p>
               Total price: $
               {cartItems?.cartItems?.reduce((a, b) => a + b.price, 0)}
