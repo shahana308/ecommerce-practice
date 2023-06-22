@@ -1,0 +1,185 @@
+/* Define standard variables and values for website */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.header {
+  margin: 0;
+  padding: 10px;
+}
+
+.flex{
+  display: flex;
+  width: 100%;
+}
+
+.center{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  margin: 20px
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 10px;
+}
+
+.product-card {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 1rem;
+  margin: 1rem 0 1rem 0;
+  max-height: 100rem;
+}
+
+.product-card p{
+  margin: 0 10px 0 10px;
+  height: 3rem;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap"
+}
+
+.image-product {
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  object-fit: fit;
+}
+
+input{
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%
+}
+
+.product-carousel{
+  width: 50%
+}
+
+.product-details{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.gap-2{
+  gap: 2rem
+}
+
+.carousel-container{
+  display: flex;
+  width: 100%;
+  position: relative
+}
+
+.carousel-content {
+  display: flex;
+  transition: all 250ms linear;
+  -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+
+.carousel-content-wrapper{
+  overflow:hidden
+}
+
+.left-arrow, .right-arrow{
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  z-index: 100;
+  top:50%
+}
+
+.left-arrow{
+  left: -20px
+}
+
+.right-arrow {
+  right: -20px;
+}
+
+.dropdown{
+  width:30%;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: black;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 100000;
+}
+
+.dropdown-button:focus + .dropdown-content {
+  visibility: visible;
+}
+
+@media screen and (max-width: 1025px) {
+  .products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .flex{
+    flex-direction: column;
+  }
+  .product-carousel, .product-details{
+    width: 100%
+  }
+ 
+}  
