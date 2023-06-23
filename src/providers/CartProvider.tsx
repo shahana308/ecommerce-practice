@@ -13,7 +13,13 @@ interface IChildren {
 const CartContext = createContext<CartContextInterface | null>(null);
 
 const CartProvider: React.FC<IChildren> = ({ children }) => {
-  const [cartItems, setCartItems] = useState<IProducts[]>([]);
+  const cartDataFromLocalStorage =
+    (localStorage.getItem("cartItems") &&
+      JSON.parse(localStorage.getItem("cartItems") || "")) ||
+    [];
+  const [cartItems, setCartItems] = useState<IProducts[]>(
+    cartDataFromLocalStorage
+  );
 
   const contextData: CartContextInterface = useMemo(
     () => ({

@@ -78,6 +78,7 @@ const ProductsContainer = () => {
               padding: "10px",
               margin: "10px",
             }}
+            key={val}
             onClick={() => setSkip(val * limit)}>
             {val + 1}
           </div>

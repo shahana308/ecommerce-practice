@@ -10,6 +10,13 @@ const Product = () => {
 
   const cartData = useCartContext();
 
+  const onAddToCartHandler = () => {
+    !cartData?.cartItems.includes(product) &&
+      cartData?.cartItems?.push(product);
+    cartData?.setCartItems(cartData?.cartItems);
+    localStorage.setItem("cartItems", JSON.stringify(cartData?.cartItems));
+  };
+
   return (
     <div className="container">
       <div className="flex gap-2">
@@ -34,11 +41,7 @@ const Product = () => {
           <h2>${product.price}</h2>
           <button
             style={{ backgroundColor: "blue" }}
-            onClick={() => {
-              !cartData?.cartItems.includes(product) &&
-                cartData?.cartItems?.push(product);
-              cartData?.setCartItems(cartData?.cartItems);
-            }}>
+            onClick={onAddToCartHandler}>
             Add to cart
           </button>
         </div>
